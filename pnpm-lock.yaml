@@ -1,3 +1,16 @@
-git add pnpm-lock.yaml
-git commit -m "fix: update pnpm-lock.yaml for patched dependencies"
-git push origin main
+{
+  "version": 2,
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "builds": [
+    {
+      "src": "server/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "server/index.ts"
+    }
+  ]
+}
