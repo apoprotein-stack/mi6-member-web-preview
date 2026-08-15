@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "installCommand": "pnpm install --no-frozen-lockfile --shamefully-hoist",
+  "installCommand": "corepack enable && corepack prepare pnpm@9.15.0 --activate && pnpm install --no-frozen-lockfile",
   "builds": [
     {
       "src": "server/index.ts",
